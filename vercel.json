@@ -1,26 +1,12 @@
 {
-  "name": "my-project",
-  "version": 2,
-  "alias": [
-    "my-project.co.uk",
-    "www.my-project.co.uk"
-  ],
-  "builds": [
-    {
-      "src": "nuxt.config.js",
-      "use": "@nuxtjs/now-builder",
-      "config": {
-        "serverFiles": [
-          "middleware/**",
-          "plugins/**",
-          "lib/**"
-        ]
-      }
-    }
-  ],
-  "routes": [
-    { "src": "/_nuxt/.+", "headers": { "cache-control": "s-maxage=31536000" } },
-    { "src": "^/(.*)", "dest": "./server.js" }
-  ],
-  "public": false
-}
+    "version":2,
+    "builds": [
+      { "src": "*.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+        {
+          "src": "/(.*)",
+          "dest": "/"
+        }
+    ]
+  }
